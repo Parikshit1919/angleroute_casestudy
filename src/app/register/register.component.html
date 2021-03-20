@@ -1,0 +1,136 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate>
+   
+    <div class="reg">
+      <h2 align="center">Register to explore amazing career opportunities</h2>
+      <table align="center">
+        
+          <tr> <td>
+            <label for="username"><b>Username</b></label>
+
+          </td></tr>
+          <tr>
+             
+              <td>
+                <input type="text" #name  id="username"  name="username" placeholder="Enter Username" required minlength="10" #username="ngModel"
+                [(ngModel)]="contact.username">
+              </td>
+              <td>
+                <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error">
+                    <div *ngIf="username.errors.required">
+                      Username is required
+                    </div>
+                    <div *ngIf="username.errors.minlength">
+                      Username Minimum Length is {{username.errors.minlength?.requiredLength}}
+                    </div>
+                  </div>
+              </td>
+          </tr>
+          <tr><td> <label for="password"><b>Password </b></label></td></tr>
+          <tr>
+              
+              <td> <input type="password" id="password" name="password" placeholder="Enter Password" required minlength="8" #password="ngModel" 
+                pattern="^[a-zA-Z0-9]+$"  [(ngModel)]="contact.password"></td>
+                <td><div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error">
+                    <div *ngIf="password.errors.required">
+                      Password is required
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                      Password Minimum Length is {{password.errors.minlength?.requiredLength}}
+                    </div>
+                    <div *ngIf="password.errors.pattern">
+                      No special charaters allowed
+                    </div>
+                  </div></td>
+          </tr>
+          <tr><td><label for="email"><b>Email</b> </label></td></tr>
+          <tr><td><input type="text" id="email" name="email" placeholder="Enter Email" required email #email="ngModel" [(ngModel)]="contact.email"></td>
+        <td> <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+            <div *ngIf="email.errors.required">
+              Email is required
+            </div>
+            <div *ngIf="email.errors.email">
+              Invalid Email Address
+            </div>
+          </div></td></tr>
+          <tr> <td>
+            <label for="city"><b>City</b> </label>
+
+          </td></tr>
+          <tr>
+             
+              <td>
+                <input type="text" #name  id="city" name="city" placeholder="Enter City" required  #city="ngModel"
+                [(ngModel)]="contact.city">
+              </td>
+              <td>
+                <div *ngIf="!city?.valid && (city?.dirty || city?.touched)" class="error">
+                    <div *ngIf="city.errors.required">
+                     City is required
+                    </div>
+                   
+                  </div>
+              </td>
+          </tr>
+          <tr> <td>
+            <label for="mobileno"><b>Mobile Number </b></label>
+
+          </td></tr>
+          <tr>
+           
+             
+            <td>
+              <input type="text"  #name  id="mobileno"  name="mobileno" placeholder="Enter Mobile Number" required minlength="10" #mobileno="ngModel"
+               pattern="^[0-9]{10}$"
+              [(ngModel)]="contact.mobileno">
+            </td>
+            <td>
+              <div *ngIf="!mobileno?.valid && (mobileno?.dirty || mobileno?.touched)" class="error">
+                  <div *ngIf="mobileno.errors.required">
+                    Mobile number is required.
+                  </div>
+            
+                  <div *ngIf="mobileno.errors.pattern" class="valid">
+                   X
+                 </div>
+                 
+                 
+                 
+            
+                 
+                  
+                 
+                </div>
+            </td>
+        </tr>
+         
+         
+        
+          <tr>
+              <td><button type="submit" [disabled]="!contactForm.valid"  >Register</button></td></tr>
+          
+      </table>
+        
+    </div>
+    <app-footer></app-footer>
+      
+    
+     
+     
+   
+      
+     
+     
+     
+    
+     
+     
+
+      
+     
+     
+      
+     
+     
+     
+    </form>
+

@@ -1,0 +1,80 @@
+<form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)" novalidate>
+  
+   
+    <div class="log">
+      <h2 align="center">Register to explore amazing career opportunities</h2>
+      <table align="center">
+        
+          <tr> <td>
+            <label for="username"><b>Username</b></label>
+
+          </td></tr>
+          <tr>
+             
+              <td>
+                <input type="text" #name  id="username"  name="username" placeholder="Enter Username" required  #username="ngModel"
+                [(ngModel)]="credent.username">
+              </td>
+            </tr>
+              <tr><td>
+                <div *ngIf="!username?.valid && (username?.dirty || username?.touched)" class="error">
+                    <div *ngIf="username.errors.required">
+                      Username is required
+                    </div>
+                   
+                  </div>
+              </td>
+          </tr>
+          <tr><td> <label for="password"><b>Password </b></label></td></tr>
+          <tr>
+              
+              <td> <input type="password" id="password" name="password" placeholder="Enter Password" required  #password="ngModel" 
+                  [(ngModel)]="credent.password"></td></tr>
+               <tr> <td><div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error">
+                    <div *ngIf="password.errors.required">
+                      Password required
+                    </div>
+                    
+                  </div></td>
+          </tr>
+          <tr>
+            <td><button type="submit" [disabled]="!LoginForm.valid" >Login</button></td>
+          </tr>
+          <tr><td> 
+           <input type="checkbox" id="isrem" name="isrem"  #isrem="ngModel" [(ngModel)]="credent.isrem"> <label for="isrem">Remember me</label></td>
+          
+          </tr>
+
+
+ </table>
+
+ <div class="fin">
+  <button type="button" class="btn" >Cancel</button>
+  <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+
+        
+    </div>
+    <app-footer></app-footer>
+      
+    
+     
+     
+   
+      
+     
+     
+     
+    
+     
+     
+
+      
+     
+     
+      
+     
+     
+     
+    </form>

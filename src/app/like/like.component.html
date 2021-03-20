@@ -1,0 +1,8 @@
+
+<button [ngClass]="{'like-button':true ,'liked':isLiked }" (click)="like()" >Like | {{numberoflikes}}</button>
+<button [ngClass]="{'dislike-button':true, 'disliked':isdisliked}" (click)="dislike()">Dislike | {{numberofdislikes}}</button>
+<h2 class>
+    {{counter}}
+        </h2>
+    <br>
+    <button (click)="onSubmit">Click</button>

@@ -1,0 +1,36 @@
+.reg
+{
+    margin-left:120px;
+   margin-right:120px;
+    background-color:white;
+    
+    padding-bottom:30px;
+}
+label
+{
+    font-size:13px;
+}
+h2{
+    padding-top:20px;
+
+}
+button{
+    width:260px;
+    height:40px;
+    margin-top:10px;
+    background-color: darkblue;
+    color:white;
+}
+input{
+    width:250px;
+    height:30px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.valid
+{
+    color:red;
+}
